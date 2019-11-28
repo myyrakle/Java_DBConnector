@@ -5,7 +5,9 @@ import java.sql.SQLException;
 public class MySQLConnector implements IDBConnector
 {
     private final static String DB_NAME = "";
-    private final static String DB_USERNAME = "root";
+    private final static String DB_URL = "jdbc:mysql://localhost:3306/";
+    private final static String DB_PARAMS = "?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=utf8";
+    private final static String DB_USERNAME = "";
     private final static String DB_PASSWORD = "";
 
     private Connection connection;
@@ -16,10 +18,7 @@ public class MySQLConnector implements IDBConnector
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            this.connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/"
-                            + DB_NAME
-                            + "?useSSL=false&useUnicode=true&characterEncoding=utf8",
-                    DB_NAME, DB_PASSWORD);
+            this.connection =  DriverManager.getConnection(DB_URL+DB_NAME+DB_PARAMS, DB_USERNAME, DB_PASSWORD);
         }
         catch (Exception e)
         {
