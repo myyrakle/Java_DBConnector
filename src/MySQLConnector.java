@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQLConnector implements IDBConnector
+public class MySQLConnector implements SQLDBConnector
 {
     private final static String DB_NAME = "";
     private final static String DB_URL = "jdbc:mysql://localhost:3306/";
