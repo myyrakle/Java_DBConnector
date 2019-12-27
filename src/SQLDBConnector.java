@@ -1,6 +1,6 @@
 import java.sql.Connection;
 
-public interface IDBConnector
+public interface SQLDBConnector
 {
     void connect();
     void disconnect();
