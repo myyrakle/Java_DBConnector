@@ -1,9 +1,6 @@
 import java.sql.Connection;
 
-public interface SQLDBConnector
+public interface SQLDBConnector extends DBConnector
 {
-    void connect();
-    void disconnect();
-    boolean isConnected();
     Connection getConnection();
 }
